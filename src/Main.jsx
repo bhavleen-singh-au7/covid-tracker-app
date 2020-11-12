@@ -112,7 +112,7 @@ const Main = () => {
         <select
           value={country}
           onChange={countryHandler}
-          className="p-2 rounded bg-secondary mx-5 text-white font-weight-bold"
+          className="p-2 my-1 rounded bg-secondary mx-5 text-white font-weight-bold"
         >
           <option value="">Select Country</option>
           {covidSummary.Countries &&

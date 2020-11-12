@@ -4,10 +4,10 @@ import { Line } from "react-chartjs-2";
 const LineGraph = (props) => {
   return (
     <div
+      className="mt-4"
       style={{
         width: "600px",
-        height: "600px",
-        margin: "50px auto",
+        margin: "auto",
       }}
     >
       <Line

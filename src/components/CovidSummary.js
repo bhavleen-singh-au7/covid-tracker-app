@@ -17,49 +17,61 @@ const CovidSummary = (props) => {
           : `${country} Corona Report`}
       </h1>
 
-      <div className="d-flex justify-content-center container">
-        <div className="card text-white text-uppercase m-3 border border-warning">
-          <div className="card-header">Total Confirmed</div>
-          <div className="card-body">
-            <p className="card-text">
-              {
-                <NumberFormat
-                  value={totalConfirmed}
-                  displayType={"text"}
-                  thousandSeparator={true}
-                />
-              }
-            </p>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">
+            <div className="card text-white text-uppercase m-3 border border-warning">
+              <div className="card-header">
+                Total Confirmed
+              </div>
+              <div className="card-body">
+                <p className="card-text">
+                  {
+                    <NumberFormat
+                      value={totalConfirmed}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                    />
+                  }
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className="card text-white text-uppercase m-3 border border-success">
-          <div className="card-header">Total Recovered</div>
-          <div className="card-body">
-            <p className="card-text">
-              {
-                <NumberFormat
-                  value={totalRecovered}
-                  displayType={"text"}
-                  thousandSeparator={true}
-                />
-              }
-            </p>
+          <div className="col-sm">
+            <div className="card text-white text-uppercase m-3 border border-success">
+              <div className="card-header">
+                Total Recovered
+              </div>
+              <div className="card-body">
+                <p className="card-text">
+                  {
+                    <NumberFormat
+                      value={totalRecovered}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                    />
+                  }
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className="card text-white text-uppercase m-3 border-1 border-danger">
-          <div className="card-header">Total Deaths</div>
-          <div className="card-body">
-            <p className="card-text">
-              {
-                <NumberFormat
-                  value={totalDeaths}
-                  displayType={"text"}
-                  thousandSeparator={true}
-                />
-              }
-            </p>
+          <div className="col-sm">
+            <div className="card text-white text-uppercase m-3 border-1 border-danger">
+              <div className="card-header">
+                Total Deaths
+              </div>
+              <div className="card-body">
+                <p className="card-text">
+                  {
+                    <NumberFormat
+                      value={totalDeaths}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                    />
+                  }
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
