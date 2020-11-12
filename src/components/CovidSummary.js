@@ -1,5 +1,4 @@
-import React from "react";
-import Card from "./Card";
+import React, { Fragment } from "react";
 import NumberFormat from "react-number-format";
 
 const CovidSummary = (props) => {
@@ -11,23 +10,18 @@ const CovidSummary = (props) => {
   } = props;
 
   return (
-    <div>
-      <div>
-        <h1 style={{ textTransform: "capitalize" }}>
-          {country === ""
-            ? "World Wide Corona Report"
-            : `${country} Corona Report`}
-        </h1>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <Card>
-            <span>Total Confirmed</span>
-            <br />
-            <span>
+    <Fragment>
+      <h1 className="text-capitalize">
+        {country === ""
+          ? "World Wide Corona Report"
+          : `${country} Corona Report`}
+      </h1>
+
+      <div className="d-flex justify-content-center container">
+        <div className="card text-white text-uppercase m-3 border border-warning">
+          <div className="card-header">Total Confirmed</div>
+          <div className="card-body">
+            <p className="card-text">
               {
                 <NumberFormat
                   value={totalConfirmed}
@@ -35,12 +29,14 @@ const CovidSummary = (props) => {
                   thousandSeparator={true}
                 />
               }
-            </span>
-          </Card>
-          <Card>
-            <span>Total Recovered</span>
-            <br />
-            <span>
+            </p>
+          </div>
+        </div>
+
+        <div className="card text-white text-uppercase m-3 border border-success">
+          <div className="card-header">Total Recovered</div>
+          <div className="card-body">
+            <p className="card-text">
               {
                 <NumberFormat
                   value={totalRecovered}
@@ -48,12 +44,14 @@ const CovidSummary = (props) => {
                   thousandSeparator={true}
                 />
               }
-            </span>
-          </Card>
-          <Card>
-            <span>Total Deaths</span>
-            <br />
-            <span>
+            </p>
+          </div>
+        </div>
+
+        <div className="card text-white text-uppercase m-3 border-1 border-danger">
+          <div className="card-header">Total Deaths</div>
+          <div className="card-body">
+            <p className="card-text">
               {
                 <NumberFormat
                   value={totalDeaths}
@@ -61,11 +59,11 @@ const CovidSummary = (props) => {
                   thousandSeparator={true}
                 />
               }
-            </span>
-          </Card>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 
